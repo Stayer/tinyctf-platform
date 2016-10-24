@@ -460,7 +460,7 @@ def submit(tid, flag):
 
         timestamp = int(time.time() * 1000)
         ip = request.remote_addr
-        print "flag submitter ip: {}".format(ip)
+        print ("flag submitter ip: {}".format(ip))
 
         # Insert flag
         new_flag = dict(task_id=task['id'], user_id=session['user_id'],
@@ -567,7 +567,7 @@ def index():
 """Initializes the database and sets up the language"""
 
 # Load config
-config_str = open('config.json', 'rb').read()
+config_str = open('config.json', 'r').read()
 config = json.loads(config_str)
 
 app.secret_key = config['secret_key']
@@ -579,7 +579,7 @@ else:
     config['startTime'] = datetime.datetime.min
 
 # Load language
-lang_str = open(config['language_file'], 'rb').read()
+lang_str = open(config['language_file'], 'r').read()
 lang = json.loads(lang_str)
 
 # Only a single language is supported for now
@@ -595,4 +595,3 @@ if __name__ == '__main__':
     # Start web server
     app.run(host=config['host'], port=config['port'],
         debug=config['debug'], threaded=True)
-

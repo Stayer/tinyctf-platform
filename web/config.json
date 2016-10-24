@@ -1,15 +1,15 @@
 {
-    "secret_key": "PLEASE_CHANGE_ME",
-    
+    "secret_key": "nice",
+
     "host": "0.0.0.0",
-    "port": 8888,
+    "port": 80,
 
 	"isProxied": false,
 
 	"startTime": "3-31-16 8:00AM",
-    
+
     "db": "sqlite:///ctf.db",
-    
+
     "language_file": "lang.json",
     "language": "english",
 
